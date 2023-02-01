@@ -1,17 +1,15 @@
+
 import React, { useState } from 'react'
-import './App.css';
+// import { v4 } from 'uuid';
+import './App.css'; 
+
 
 function App() {
-  const [input,setInput]=useState(" ")
-  const [upDate,setUpDate]=useState([
-    
-  ])
+  const [input,setInput]=useState()
+  const [upDate,setUpDate]=useState([])
   const addTodo =(e)=>{
     e.preventDefault();
-    const user={
-      input, 
-    }
-    setUpDate([...upDate,user])
+    setUpDate([...upDate,{input}])
     setInput("")
   };
   return (
