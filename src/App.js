@@ -12,6 +12,10 @@ function App() {
     setUpDate([...upDate,{input}])
     setInput("")
   };
+  const deleteItem = (index)=>{
+   upDate.splice(index,1)
+   setUpDate([...upDate])
+  }
   return (
     <div>
      <div className='main-container'> 
@@ -26,9 +30,10 @@ function App() {
        <button className='btn' onClick={addTodo}>Add</button>
        <div className='list'>
        {
-          upDate.map(user=>{
+          upDate.map((user,index)=>{
             return(
-              <h1 className='head'>{user.input}</h1>
+              <h1 className='head'>{user.input}
+              <span className='btn2' onClick={()=>deleteItem(index)}>Delete</span></h1>
             )
           })
         }
