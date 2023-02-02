@@ -1,17 +1,19 @@
 .main-container{
   width: 50%;
-  height: 80vh;
   margin: 20px auto;
-  background-color: #eee;
+  
+  
 }
 .heading{
   text-align: center;
   color: blue;
+  font-size: large;
 } 
+ 
 #in{
-  width:60%;
+  width:80%;
   padding: 10px;
-  margin: 10px 10px;
+  margin: 0px 10px;
   border-radius: 5px;
   margin-left: 50px;
 }
@@ -25,7 +27,7 @@
     display: inline-block;
     font-size: 16px;
 }
-.btn2{
+.btn1{
   background-color: red; 
     border: none;
     color: white;
@@ -34,9 +36,29 @@
     text-decoration: none;
     display: inline-block;
     font-size: 16px;
-    margin-left: 15px;
+    margin: 0px 30px;
+    /* float: right; */
 }
-.head{
-  font-size: smaller;
-  margin-left: 50px;
+.btn2{
+  background-color:green; 
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    /* float: right; */
 }
+ .htt{
+  display: flex;
+  justify-content: space-between;
+  line-height: 50px;
+   font-size: larger;
+   padding: 10px 42px;
+
+} 
+span{
+  margin-left: 15px;
+}
+
