@@ -6,7 +6,6 @@ function App() {
   const [taskList, setTaskList] = useState([]);
   const [editId, setEditId] = useState();
   const [toggleSubmit, setToggleSubmit] = useState(true);
-
   //adding Task
   function AddTask(e) {
     if (task !== "") {
@@ -36,12 +35,20 @@ function App() {
     setEditId(id);
     setToggleSubmit(false);
   };
-
+  const handleCheckboxChange = (id) => {
+    const newList = taskList.map((task) => {
+      if (task.id === id) return { ...task, done: !task.done };
+      return task;
+    });
+    setTaskList(newList);
+    
+  };
   const handleKeydown = (e) => {
     if (e.keyCode === 13) {
       AddTask(e);
     }
   };
+
   return (
     <div>
       <div className="main-container">
@@ -73,22 +80,29 @@ function App() {
             return (
               <>
                 {" "}
-                <span className="htt" key={task.id}>
+                <span
+                  className="htt"
+                  key={task.id}
+                  style={task.done ? { textDecoration: "line-through" } : null}
+                >
                   {task.task}
-                  <div className="bt">
-                    <button
-                      className="btn1"
-                      onClick={() => deleteTodo(task.id)}
-                    >
-                      Delete
-                    </button>
-                    <button
-                      className="btn2"
-                      onClick={() => handleEdit(task.id)}
-                    >
-                      Edit
-                    </button>
-                  </div>
+                
+                <div className="bt">
+                  <input
+                    type="checkbox"
+                    checked={task.done}
+                    onChange={() => handleCheckboxChange(task.id)}
+                  />
+
+                  <button className="btn1" onClick={() => deleteTodo(task.id)}>
+                    Delete
+                  </button>
+                  <button className="btn2" onClick={() => handleEdit(task.id)}>
+                    Edit
+                  </button>
+                 
+                  
+                </div>
                 </span>
               </>
             );
