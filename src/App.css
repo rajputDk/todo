@@ -61,4 +61,8 @@
 span{
   margin-left: 15px;
 }
+#check{
+  text-decoration: line-through;
+  
+}
 
